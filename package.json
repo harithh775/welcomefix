@@ -1,0 +1,15 @@
+{
+  "name": "Meliodas",
+  "version": "1.0.0",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "dependencies": {
+    "discord.js": "11.3.0",
+    "canvas": "^2.6.1",
+    "quick.db": "^7.0.0-b22",
+    "node-superfetch": "^0.1.10",
+    "canvas-constructor": "^3.1.0"
+  }
+}
