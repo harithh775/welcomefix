@@ -7,6 +7,7 @@ const { get } = require("node-superfetch");
 const bot = new Discord.Client();
 const Prefix = "^";
 
+Canvas.registerFont(`${process.cwd()}/assets/font/builtitlingbd.ttf`, "Tes") 
 
 bot.on("ready", () => {
   console.log("Ready!");
@@ -93,11 +94,11 @@ bot.on("message", async msg => {
             .setTextAlign("center")
             .setColor("#ffffff")
             .addText("WELCOME", 512, 355)
-            .setTextFont("30pt Bold")
+            .setTextFont("30pt Tes")
             .setTextAlign("center")
             .setColor("#ffffff")
             .addText(`${msg.member.user.tag}`, 512, 395)
-            .setTextFont("24pt Bold")
+            .setTextFont("24pt Tes")
             .setTextAlign("center")
             .setColor("#ffffff")
             .addText(`${MSG}`, 512, 430)
