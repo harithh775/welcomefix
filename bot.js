@@ -14,10 +14,12 @@ bot.on("ready", () => {
   console.log("Ready!");
 });
 
+
 bot.on("message", async msg => {
   if (msg.author.bot) return;
   if (msg.channel.type === "dm") return;
   if (!msg.content.startsWith(Prefix)) return;
+  if (!msg.member.hasPermission("ADMINISTRATOR")) return msg.channel.send("Tidak punya akses...")
 
   const args = msg.content.split(" ");
   let command = msg.content.toLowerCase().split(" ")[0];
@@ -49,8 +51,8 @@ bot.on("message", async msg => {
       Argumen.toUpperCase() === "MSG"
     ) {
       let Message = args.slice(2).join(" ");
-      if (Message.length > 24) {
-        msg.channel.send(`Message??`);
+      if (Message.length > 30) {
+        msg.channel.send(`Terlalu panjang`);
       } else {
         msg.channel.send(`Message: ${Message}`);
         db.set(`${msg.guild.id}.Config.Welcome.Message`, Message);
@@ -86,23 +88,23 @@ bot.on("message", async msg => {
         var { body: background } = await get(`${BG}`);
 
         async function createCanvas() {
-          return new Canvas(1024, 450)
+          return new Canvas(1024, 500)
             .addImage(background, 0, -100)
             .setColor("#ffffff")
             .addCircle(512, 155, 120)
             .addCircularImage(avatar, 512, 155, 115)
-            .setTextFont("58pt Font2")
+            .setTextFont("90px Bold")
             .setTextAlign("center")
             .setColor("#ffffff")
-            .addText("WELCOME", 512, 355)
-            .setTextFont("30pt Font2")
+            .addText("WELCOME", 512, 360)
+            .setTextFont("50px Bold")
             .setTextAlign("center")
             .setColor("#ffffff")
-            .addText(`${msg.member.user.tag}`, 512, 395)
-            .setTextFont("24pt Font2")
+            .addText(`${msg.member.user.tag}`, 512, 410)
+            .setTextFont("35px Bold")
             .setTextAlign("center")
             .setColor("#ffffff")
-            .addText(`${MSG}`, 512, 430)
+            .addText(`${MSG}`, 512, 449)
             .toBuffer();
         }
 
@@ -136,23 +138,23 @@ bot.on("guildMemberAdd", async member => {
       var { body: background } = await get(`${BG}`);
       async function createCanvas() {
         return new Canvas(1024, 450)
-          .addImage(background, 0, -100)
-          .setColor("#ffffff")
-          .addCircle(512, 155, 120)
-          .addCircularImage(avatar, 512, 155, 115)
-          .setTextFont("58pt Font2")
-          .setTextAlign("center")
-          .setColor("#ffffff")
-          .addText("WELCOME", 512, 355)
-          .setTextFont("30pt Font2")
-          .setTextAlign("center")
-          .setColor("#ffffff")
-          .addText(`${member.user.tag}`, 512, 395)
-          .setTextFont("24pt Font2")
-          .setTextAlign("center")
-          .setColor("#ffffff")
-          .addText(`${MSG}`, 512, 430)
-          .toBuffer();
+   .addImage(background, 0, -100)
+            .setColor("#ffffff")
+            .addCircle(512, 155, 120)
+            .addCircularImage(avatar, 512, 155, 115)
+            .setTextFont("90px Bold")
+            .setTextAlign("center")
+            .setColor("#ffffff")
+            .addText("WELCOME", 512, 360)
+            .setTextFont("50px Bold")
+            .setTextAlign("center")
+            .setColor("#ffffff")
+            .addText(`${member.user.tag}`, 512, 410)
+            .setTextFont("35px Bold")
+            .setTextAlign("center")
+            .setColor("#ffffff")
+            .addText(`${MSG}`, 512, 449)
+            .toBuffer();
       }
       let Channelz = bot.channels.get(`${Channel}`);
       Channelz.send({
