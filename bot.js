@@ -137,7 +137,7 @@ bot.on("guildMemberAdd", async member => {
       );
       var { body: background } = await get(`${BG}`);
       async function createCanvas() {
-        return new Canvas(1024, 450)
+        return new Canvas(1024, 500)
    .addImage(background, 0, -100)
             .setColor("#ffffff")
             .addCircle(512, 155, 120)
