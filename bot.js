@@ -19,7 +19,7 @@ bot.on("message", async msg => {
   if (msg.author.bot) return;
   if (msg.channel.type === "dm") return;
   if (!msg.content.startsWith(Prefix)) return;
-  if (!msg.member.hasPermission("ADMINISTRATOR")) 
+  if (!msg.member.hasPermission("ADMINISTRATOR")) return console.log('THIS USER HAS ADMINISTRATOR PERMISSIONS!')
 
   const args = msg.content.split(" ");
   let command = msg.content.toLowerCase().split(" ")[0];
