@@ -9,6 +9,7 @@ const Prefix = "^";
 
 Canvas.registerFont(`${process.cwd()}/assets/font/builtitlingbd.ttf`, "Tes") 
 Canvas.registerFont(`${process.cwd()}/assets/font/BebasNeue-Regular.ttf`, "Font2") 
+Canvas.registerFont(`${process.cwd()}/assets/font/theboldfont.ttf`, "Font3") 
 
 bot.on("ready", () => {
   console.log("Ready!");
@@ -93,15 +94,15 @@ bot.on("message", async msg => {
             .setColor("#ffffff")
             .addCircle(512, 155, 120)
             .addCircularImage(avatar, 512, 155, 115)
-            .setTextFont("90px Font2")
+            .setTextFont("90px Font3")
             .setTextAlign("center")
             .setColor("#ffffff")
             .addText("WELCOME", 512, 360)
-            .setTextFont("50px Font2")
+            .setTextFont("50px Font3")
             .setTextAlign("center")
             .setColor("#ffffff")
             .addText(`${msg.member.user.tag}`, 512, 410)
-            .setTextFont("35px Font2")
+            .setTextFont("35px Font3")
             .setTextAlign("center")
             .setColor("#ffffff")
             .addText(`${MSG}`, 512, 449)
